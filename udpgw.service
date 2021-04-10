@@ -1,0 +1,16 @@
+[Unit]
+Description=onfs server ssh
+After=network.target
+StartLimitIntervalSec=0
+
+[Service]
+Type=simple
+Restart=always
+RestartSec=1
+User=root
+ExecStart=/usr/local/bin/badvpn-udpgw --listen-addr 127.0.0.1:7300
+
+[Install]
+WantedBy=multi-user.target
+
+
